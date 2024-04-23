@@ -1,6 +1,4 @@
 <script setup lang="ts">
-
-
 import {useRouter} from "vue-router";
 
 const router = useRouter()
@@ -13,7 +11,7 @@ const router = useRouter()
 </template>
 
 <style scoped>
-#header{
+#header {
     display: flex;
     text-align: center;
     align-items: center;

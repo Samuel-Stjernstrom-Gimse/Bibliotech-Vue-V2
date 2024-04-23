@@ -28,15 +28,15 @@ const login = async () => {
         });
 
         if (response.ok) {
-            const data = await response.json();
-            console.log('Login successful:', data);
+            const data = await response.json()
+            console.log('Login successful:', data)
             await router.push(`/books`)
         } else {
-            console.error('Login failed:', response.statusText);
-            error.value = response.statusText;
+            console.error('Login failed:', response.statusText)
+            error.value = response.statusText
         }
     } catch (err: any) {
-        console.error('Login error:', err.message);
+        console.error('Login error:', err.message)
         error.value = err.message;
     }
 };
@@ -57,26 +57,26 @@ const postNewUser = async () => {
         });
 
         if (response.ok) {
-            const data = await response.json();
-            console.log('New user created:', data);
-            newEmail.value = '';
-            newUsername.value = '';
-            newPassword.value = '';
-            newUserPrompt.value = 'New user created successfully';
+            const data = await response.json()
+            console.log('New user created:', data)
+            newEmail.value = ''
+            newUsername.value = ''
+            newPassword.value = ''
+            newUserPrompt.value = 'New user created successfully'
         } else {
-            console.error('Failed to create new user:', response.statusText);
-            newUserError.value = response.statusText;
+            console.error('Failed to create new user:', response.statusText)
+            newUserError.value = response.statusText
         }
 
     } catch (err: any) {
-        console.error('Error creating new user:', err.message);
-        newUserError.value = err.message;
+        console.error('Error creating new user:', err.message)
+        newUserError.value = err.message
     }
-};
+}
 
 const handleNewUser = () => {
-    showNewUserForm.value = !showNewUserForm.value;
-};
+    showNewUserForm.value = !showNewUserForm.value
+}
 
 </script>
 
