@@ -42,7 +42,6 @@ onMounted(async () => {
             <Book :book="book" :bookings="bookingsArray"/>
         </div>
     </div>
-
     <div v-else>
         <h1>No books available</h1>
     </div>

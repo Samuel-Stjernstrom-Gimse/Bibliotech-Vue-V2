@@ -86,4 +86,5 @@ const postBooking = async () => {
     display: inline-block;
     text-align: center;
 }
+
 </style>
