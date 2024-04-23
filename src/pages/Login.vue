@@ -67,6 +67,7 @@ const postNewUser = async () => {
             console.error('Failed to create new user:', response.statusText);
             newUserError.value = response.statusText;
         }
+
     } catch (err: any) {
         console.error('Error creating new user:', err.message);
         newUserError.value = err.message;
@@ -92,19 +93,17 @@ const handleNewUser = () => {
     <div>
         <h5 id="new-user-text" @click="handleNewUser">New User</h5>
         <div v-if="showNewUserForm">
-            <form @submit.prevent="postNewUser" id="new-user-form">
-                <input type="email" placeholder="email" v-model="newEmail"/>
+            <form @submit.prevent="postNewUser">
+                <input type="email" placeholder="Email" v-model="newEmail"/>
                 <input type="text" placeholder="Username" v-model="newUsername"/>
                 <input type="password" placeholder="Password" v-model="newPassword"/>
-                <button type="submit">New User</button>
+                <button type="submit">Create New User</button>
             </form>
             <p v-if="error" style="color: red;">{{ newUserError }}</p>
             <p v-if="newUserPrompt" style="color: greenyellow;">{{ newUserPrompt }} </p>
         </div>
-
     </div>
 </template>
-
 
 <style scoped>
 form {
