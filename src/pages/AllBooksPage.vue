@@ -2,6 +2,7 @@
 import { onMounted, ref } from "vue";
 import Book from "../components/Book.vue";
 import { BookingType } from "../types/BookingType.ts";
+import PostBook from "../components/PostBook.vue";
 
 const booksArray = ref([])
 const bookingsArray = ref<BookingType[]>([])
@@ -37,6 +38,7 @@ onMounted(async () => {
 </script>
 
 <template>
+    <PostBook/>
     <div id="book-section" v-if="booksArray.length > 0">
         <div v-for="book in booksArray">
             <Book :book="book" :bookings="bookingsArray"/>

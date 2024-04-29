@@ -14,7 +14,7 @@ const bookingIndex = ref<number>()
 const startDate = ref('')
 const endDate = ref('')
 
-onMounted(()=>{
+onMounted(() =>{
     props.bookings.forEach((booking: BookingType, index: number) => {
         if (booking.bookId === props.book.id) {
             isBooked.value = true

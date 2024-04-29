@@ -25,7 +25,7 @@ const login = async () => {
                 username: username.value,
                 password: password.value
             })
-        });
+        })
 
         if (response.ok) {
             const data = await response.json()
@@ -35,11 +35,12 @@ const login = async () => {
             console.error('Login failed:', response.statusText)
             error.value = response.statusText
         }
+
     } catch (err: any) {
         console.error('Login error:', err.message)
         error.value = err.message;
     }
-};
+}
 
 const postNewUser = async () => {
     try {
@@ -54,7 +55,7 @@ const postNewUser = async () => {
                 email: newEmail.value,
                 password: newPassword.value
             })
-        });
+        })
 
         if (response.ok) {
             const data = await response.json()
